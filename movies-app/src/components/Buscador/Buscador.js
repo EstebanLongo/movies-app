@@ -26,34 +26,37 @@ export class Buscador extends Component {
     const { title } = this.state;
     return (
       <div>
-        <h2>Buscador</h2>
         <form className="form-container" onSubmit={(e) => this.handleSubmit(e)}>
           <div>
-            <label className="label" htmlFor="title">Película: </label>
             <input
               type="text"
+              className="inputbuscador"
               id="title"
               autoComplete="off"
               value={title}
               onChange={(e) => this.handleChange(e)}
+              placeholder='Buscar pelicula...'
             />
           </div>
           <button type="submit" onClick={() => this.props.obtenerPelis(title)}>BUSCAR</button>
         </form>
-        <ul>
+        
+          <div className="searchs">
               {
                   this.props.state.moviesLoaded.map((pelicula) => {
                           return (
-                                <div key={pelicula.imdbID}>
-                                  <Link to={`/movie_detail/${pelicula.imdbID}`}>
-                                      <p> { pelicula.Title}  </p>
+                                <div key={pelicula.imdbID} className='moviesearch'>
+                                  <Link to={`/movie_detail/${pelicula.imdbID}`} className='link'>
+                                  <img src={pelicula.Poster} alt="poster de la pelicula" className="imgsearch"/>
+                                      <p className="searchtitle"> { pelicula.Title}  </p>
                                   </Link>
-                                  <button onClick={() => this.props.agregarAFav(pelicula)}> ♥️ </button>
+                                  <button className="btnsearchs" onClick={() => this.props.agregarAFav(pelicula)}> ♥️ </button>
                                 </div>
                           )
                   })
               }
-        </ul>
+              </div>
+        
       </div>
     );
   }

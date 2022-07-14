@@ -1,17 +1,12 @@
 .navbar {
     height: 75px;
-    width: 100%;
-    top: 0;
-    left: 0;
+
     background-color: #992929d0;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 20px;
     box-sizing: border-box;
-    /* background-image: url('https://cdn1.vectorstock.com/i/1000x1000/51/35/film-strip-seamless-background-in-flat-style-vector-31725135.jpg'); */
-    /* background-repeat: no-repeat; */
-    /* background-size: cover */
 }
 
 .navbar nav {

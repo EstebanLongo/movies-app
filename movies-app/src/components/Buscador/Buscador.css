@@ -1,12 +1,17 @@
 .cnt {
     padding-top: 10px;
-    background-color: aqua;
 }
+
+.inputbuscador{
+    height: 2rem;
+    width: 20rem;
+}
+
 .form-container {
-    
     display:flex;
     flex-direction: row;
-    align-items: flex-start;
+    justify-content: center;
+    padding-top: 3rem;
 }
 
 .form-container button {
@@ -14,4 +19,53 @@
 }
 .label {
     padding-right: 10px;
+}
+
+.moviesearch{
+    border: rgb(35, 33, 33)  solid 2px;
+    background-color: rgba(15, 15, 15, 0.865);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 17rem;
+    text-align: center;
+}
+.link{
+    text-decoration: none;
+
+}
+.searchtitle{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: rgb(255, 255, 255);
+}
+.searchs{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 7.5rem;
+    padding-top: 3rem;
+    gap: 2rem;
+}
+
+.searchs:hover{
+    resize: both;
+}
+.imgsearch{
+    width: 100%;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    width: 17rem;
+    height: 20rem;
+}
+
+.btnsearchs{
+    background-color: rgb(203, 33, 33);
+    height: 2rem;
+    width: 2rem;
+    border-radius: 15px;
 }
