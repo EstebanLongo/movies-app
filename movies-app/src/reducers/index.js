@@ -31,6 +31,14 @@ function rootReducer(state = initialState, action) {
         movieDetail: action.payload
       }
   }
+  if (action.type === "CLEAR") {
+    return {
+      ...state,
+      movieDetail: {},
+      moviesLoaded: [],
+    }
+  }
+
 
 
   return state;

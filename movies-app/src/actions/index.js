@@ -41,6 +41,11 @@ export function getMovieDetail(id){
     }
 }
 
+export function clear() {
+  return {
+      type: "CLEAR"
+  }
+}
 
 
 // function getMovies(infoPelis){

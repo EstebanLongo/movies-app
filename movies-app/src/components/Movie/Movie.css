@@ -1,83 +1,29 @@
-.movie-card {
-  font: 14px/22px "Lato", Arial, sans-serif;
-  color: #A9A8A3;
-  padding: 40px 0;
-  border: black solid 2px;
-  background-color: #C4AF3D;
+.movie-detail{
+  background-color: #252323eb;
+  width: 55rem;
+  height: 45rem;
+  margin: 1rem 23rem;
+  color: rgba(228, 236, 236, 0.954);
 }
 
-.container {
-  margin: 0 auto;
-  width: 700px;
-  height: 600px;
-  background: #4d4d4d;
-  border-radius: 5px;
-  position: relative;
-  background-color: #C4AF3D;
+.btnback{
+  background-color: rgba(21, 20, 20, 0.847);
+  color: rgb(178, 48, 48);
+  width: 5rem;
+  float: left;
 }
 
-
-
-.details {
-  padding: 50px 0 0 50px;
-  background-color: #C4AF3D;
+.tdy{
+  margin-top: -27rem;
+  padding-left: 20rem;
+  margin-bottom: 18rem;
 }
 
-.title {
-    color: white;
-    font-size: 40px;
-    margin-bottom: 13px;
-    line-height: normal;
-    position: relative;
-}
-.title span {
-    margin-left: 12px;
-    background: #C4AF3D;
-    border-radius: 5px;
-    color: #544C21;
-    font-size: 14px;
-    padding: 0px 4px;
-  }
-.description {
-  bottom: 0px;
-  height: 200px;
-  font-size: 16px;
-  line-height: 26px;
-  color: #B1B0AC;
-  
-}
-.column {
-    padding-left: 41px;
-    padding-top: 30px;
-    margin-left: 20px;
-    width: 480px;
+.img {
+  padding-left: 0.5rem;
 }
 
-.img img {
-  width: 200px;
-  height: 210px;
-  padding-left: 50px;
-}
-.container2 {
-  display: flex;
-  flex-direction: row;
-}
-
-.movie-detail {
-  display: flex;
-  flex-direction: column;
-  background-image: url("blob:https://app.haikei.app/523d95ab-9ff9-43e6-859d-1c2aca0c6f1f");
-  min-height:100%;
-  background-repeat: no-repeat;
-  background-size: contain;
-    /* margin: 0;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale; 
-    */
-} 
-
-.img{
-  display: flex;
-  width: 250px;
-  align-self: center;
-}
+/* .detailtitle{
+  margin-top: -450px;
+  padding-left: 200px;
+} */

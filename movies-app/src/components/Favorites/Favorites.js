@@ -1,41 +1,62 @@
-import React, { Component } from "react";
+import React, { Component, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
-import { removeMovieFavorite } from "../../actions";
+import { Link, useHistory } from "react-router-dom";
+import { removeMovieFavorite, clear } from "../../actions";
 import "./Favorites.css";
+import { ArrowLeftIcon } from '@chakra-ui/icons';
+import Swal from 'sweetalert2';
 
-export class ConnectedList extends Component {
-  render() {
-    return (
-      <div>
-        <h2>Películas Favoritas</h2>
-        <ul>
-          {this.props.moviesFavourites.map((pelicula) => {
+export default function Favorites() {
+  const dispatch = useDispatch();
+  const history = useHistory()
+  const moviesFavorites = useSelector((state) => state.moviesFavourites);
+
+  useEffect(() => {
+    dispatch(clear())
+}, [dispatch])
+
+function removeFavs(e){
+  dispatch(removeMovieFavorite(e))
+  Swal.fire('Eliminada correctamente de favoritas!', '', 'error')
+}
+// Swal.fire("Error", "Llene los campos correctamente", "error");
+  return (
+    <div>
+      <button className="back" onClick={() => history.goBack()}>
+      <ArrowLeftIcon/> VOLVER
+      </button>
+      <h1 className="favoritas">Favoritas</h1>
+      <div className="favscontainer">
+        {moviesFavorites.length !== 0 ? (
+          moviesFavorites.map((pelicula) => {
             return (
-              <div key={pelicula.imdbID}>
-                <Link to={`/movie_detail/${pelicula.imdbID}`}>
+              <div key={pelicula.imdbID} className="favmovie">
+                <div className="btnytitle">
                   <p> {pelicula.Title} </p>
+                  <button
+                    className="btnremove"
+                    type="button"
+                    class="btn btn-danger"
+                    onClick={() => removeFavs(pelicula.imdbID)}
+                  >
+                    X
+                  </button>
+                </div>
+                <Link to={`/movie_detail/${pelicula.imdbID}`} className="link">
+                  <img
+                    src={pelicula.Poster}
+                    alt="poster de la pelicula"
+                    className="imgsearch"
+                  />
                 </Link>
-                <button
-                  onClick={() =>
-                    this.props.removeMovieFavorite(pelicula.imdbID)
-                  }
-                >
-                  {" "}
-                  X{" "}
-                </button>
               </div>
             );
-          })}
-        </ul>
+          })
+        ) : (
+          <div className="nofav">No cargaste favoritas</div>
+        )}
       </div>
-    );
-  }
+    </div>
+  );
 }
-function mapStateToProps(state) {
-  return {
-    moviesFavourites: state.moviesFavourites,
-  };
-}
-
-export default connect(mapStateToProps, { removeMovieFavorite })(ConnectedList);
