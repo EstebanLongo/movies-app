@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { connect, useDispatch, useSelector } from "react-redux"
 import { Link, useParams } from 'react-router-dom';
-import { getMovieDetail, clear } from "../../actions/index";
+import { getMovieDetail, clear } from "../../redux/actions/index";
 import { ArrowLeftIcon } from "@chakra-ui/icons";
 import { useHistory } from "react-router-dom";
 import "./Movie.css";

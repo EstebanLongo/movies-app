@@ -4,8 +4,6 @@ const initialState = {
   movieDetail: {}
 };
 
-
-
 function rootReducer(state = initialState, action) {
   if (action.type === "ADD_MOVIE_FAVORITE") {
       return {

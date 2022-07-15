@@ -2,7 +2,7 @@ import React, { Component, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { connect } from "react-redux";
 import { Link, useHistory } from "react-router-dom";
-import { removeMovieFavorite, clear } from "../../actions";
+import { removeMovieFavorite, clear } from "../../redux/actions";
 import "./Favorites.css";
 import { ArrowLeftIcon } from '@chakra-ui/icons';
 import Swal from 'sweetalert2';

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { connect, useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { getMovies, addMovieFavorite, clear } from "../../actions/index.js";
+import { getMovies, addMovieFavorite, clear } from "../../redux/actions/index.js";
 import Swal from 'sweetalert2';
 import "./Buscador.css";
 
